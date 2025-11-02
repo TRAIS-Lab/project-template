@@ -29,6 +29,7 @@ A comprehensive machine learning project template with modern tooling for depend
 ├── Apptainer.def           # Container definition file
 ├── .pre-commit-config.yaml # Pre-commit hooks configuration
 ├── .github/workflows/      # GitHub Actions workflows
+├── Makefile               # Convenient command shortcuts
 ├── CLAUDE.md              # Claude AI assistant configuration
 └── AGENT.md               # General AI assistant configuration
 ```
@@ -78,7 +79,45 @@ A comprehensive machine learning project template with modern tooling for depend
    uv run pre-commit install
    ```
 
+   Or use the Makefile:
+   ```bash
+   make setup  # Installs dependencies and pre-commit hooks
+   ```
+
 ## Development
+
+### Using Makefile (Recommended)
+
+The project includes a `Makefile` with convenient shortcuts for common tasks:
+
+```bash
+# Setup (install dependencies and pre-commit hooks)
+make setup
+
+# Code formatting and linting
+make format          # Format code
+make lint            # Lint code
+make format-check    # Check formatting without modifying
+make lint-fix        # Fix auto-fixable linting issues
+
+# Testing
+make test            # Run tests
+make test-cov        # Run tests with coverage report
+
+# Pre-commit
+make pre-commit-install  # Install pre-commit hooks
+make pre-commit-run     # Run pre-commit on all files
+
+# Container
+make build-container  # Build Apptainer container
+make run-container CMD="python -m src.train"  # Run command in container
+
+# Cleanup
+make clean           # Remove cache and build artifacts
+
+# See all available commands
+make help
+```
 
 ### Running Tests
 
