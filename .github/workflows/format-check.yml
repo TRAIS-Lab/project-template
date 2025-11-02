@@ -21,7 +21,10 @@ jobs:
         run: uv python install 3.11
 
       - name: Install dependencies
-        run: uv sync --dev
+        run: |
+          # Generate lock file if it doesn't exist
+          uv lock || true
+          uv sync --dev
 
       - name: Run ruff format check
         run: uv run ruff format --check .
