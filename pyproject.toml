@@ -40,6 +40,8 @@ packages = ["src/ml_project_template"]
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+
+[tool.ruff.lint]
 select = [
     "E",   # pycodestyle errors
     "W",   # pycodestyle warnings
@@ -54,14 +56,14 @@ ignore = [
     "B008",  # do not perform function calls in argument defaults
 ]
 
+[tool.ruff.lint.isort]
+known-first-party = ["ml_project_template"]
+
 [tool.ruff.format]
 quote-style = "double"
 indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
-
-[tool.ruff.isort]
-known-first-party = ["ml_project_template"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

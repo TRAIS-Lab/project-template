@@ -1,7 +1,5 @@
 """Example test file to demonstrate pytest setup."""
 
-import pytest
-
 
 def test_example():
     """Example test that always passes."""

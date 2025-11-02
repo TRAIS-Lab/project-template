@@ -21,7 +21,7 @@ install:
 	uv sync
 
 install-dev:
-	uv sync --dev
+	uv sync --all-extras --dev
 
 lock:
 	uv lock

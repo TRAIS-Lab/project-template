@@ -26,10 +26,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          # Ensure lock file includes dev dependencies
-          uv lock --dev
-          # Sync with dev dependencies
-          uv sync --dev
+          # Sync with all extras and dev dependencies
+          uv sync --all-extras --dev
 
       - name: Run pytest
         run: uv run pytest

@@ -59,8 +59,10 @@ A comprehensive machine learning project template with modern tooling for depend
 
 3. **Install dependencies**:
    ```bash
-   uv sync --dev
+   uv sync --all-extras --dev
    ```
+   
+   Note: `--all-extras` is needed because dev dependencies are defined as optional dependencies in `pyproject.toml`.
 
 4. **Generate lock file** (if not present):
    ```bash
@@ -152,7 +154,7 @@ uv run ruff check --fix .
 
 1. Add the dependency to `pyproject.toml` under `[project.dependencies]` (for production) or `[project.optional-dependencies.dev]` (for development)
 2. Run `uv lock` to update the lock file
-3. Run `uv sync` to install the new dependency
+3. Run `uv sync --all-extras --dev` to install the new dependency (or `uv sync` for production dependencies only)
 
 Example:
 ```bash
