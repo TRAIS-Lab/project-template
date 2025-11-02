@@ -1,0 +1,38 @@
+# Weights & Biases Configuration
+# This file can be used to configure W&B settings for your experiments
+
+project: "ml-project-template"
+entity: "your-wandb-entity"  # Replace with your W&B entity/team name
+job_type: "training"
+tags:
+  - "experiment"
+  - "baseline"
+
+# Default hyperparameters
+hyperparameters:
+  learning_rate: 0.001
+  batch_size: 32
+  epochs: 100
+  optimizer: "adam"
+
+# Data paths
+data:
+  train_path: "data/train"
+  val_path: "data/val"
+  test_path: "data/test"
+
+# Model configuration
+model:
+  name: "base_model"
+  architecture: "transformer"
+
+# Logging settings
+logging:
+  log_interval: 10
+  save_checkpoints: true
+  checkpoint_dir: "checkpoints"
+
+# Resource settings
+resources:
+  gpu: true
+  num_workers: 4

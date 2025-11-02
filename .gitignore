@@ -205,3 +205,39 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Machine Learning
+# Data files (keep structure, ignore contents)
+data/*
+!data/.gitkeep
+
+# Model checkpoints
+checkpoints/*
+!checkpoints/.gitkeep
+
+# Training logs
+logs/*
+!logs/.gitkeep
+
+# Weights & Biases
+wandb/
+
+# Apptainer/Singularity
+*.sif
+*.img
+.singularity/
+
+# Jupyter notebook outputs
+*.ipynb_checkpoints/
+
+# Model artifacts
+models/*.pt
+models/*.pth
+models/*.h5
+models/*.ckpt
+models/*.pb
+
+# Experiments
+experiments/
+runs/
+outputs/

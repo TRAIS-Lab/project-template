@@ -1,0 +1,37 @@
+# Cursor AI Rules for ML Project Template
+
+## Project Context
+This is a machine learning project template using:
+- Python 3.11+ with uv for dependency management
+- Ruff for code formatting and linting
+- pytest for testing
+- Weights & Biases for experiment tracking
+- Apptainer for containerization
+- Slurm for HPC job scheduling
+
+## Code Style
+- Follow PEP 8 with line length of 100 characters
+- Use type hints for function signatures
+- Include docstrings for all public functions and classes
+- Format code with ruff before committing
+- Run tests with pytest
+
+## File Organization
+- Source code goes in `src/`
+- Tests go in `tests/`
+- Scripts go in `scripts/`
+- Configuration files go in `config/`
+- Slurm job scripts go in `slurm/`
+
+## When Making Changes
+1. Format code: `uv run ruff format .`
+2. Check linting: `uv run ruff check .`
+3. Run tests: `uv run pytest`
+4. Update dependencies: Edit `pyproject.toml`, then run `uv lock`
+
+## ML Best Practices
+- Use W&B for experiment tracking
+- Store hyperparameters in config files
+- Keep data in `data/` directory
+- Save checkpoints to `checkpoints/`
+- Log training runs to `logs/`
