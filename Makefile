@@ -58,14 +58,15 @@ pre-commit-run:
 
 # Containerization
 build-container:
-	apptainer build image.sif Apptainer.def
+	apptainer build --fakeroot image.sif Apptainer.def
 
 run-container:
 	@if [ -z "$(CMD)" ]; then \
 		echo "Usage: make run-container CMD='python -m src.train'"; \
+		echo "       Or multiple commands: make run-container CMD='uv run ruff format . && uv run pytest'"; \
 		exit 1; \
 	fi
-	apptainer exec image.sif $(CMD)
+	apptainer exec --nv --cleanenv --bind "$(CURDIR)":/work --pwd /work image.sif bash -lc 'set -euo pipefail; $(CMD)'
 
 # Cleanup
 clean:
